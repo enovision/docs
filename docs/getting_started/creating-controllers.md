@@ -81,7 +81,7 @@ inventory
 Let's say you want to create a command named  `hello`. You should start by creating a new directory under the `app/Commands` folder:
 
 ```shell
-mkdir app/Commands/Hello
+mkdir app/Command/Hello
 ```
 
 Now `Hello` is your Command Namespace. Inside that directory, you'll need to create at least one Command Controller. You can start with the `DefaultController`, which will be called by default when no subcommand is provided.
@@ -99,7 +99,7 @@ class DefaultController extends CommandController
 {
     public function handle(): void
     {       
-        $this->display("Hello World!");
+        $this->getPrinter()->display("Hello World!");
     }
 }
 ```
@@ -131,7 +131,7 @@ class CapsController extends CommandController
 {
     public function handle(): void
     {       
-        $this->display("HELLO WORLD!");
+        $this->getPrinter()->display("HELLO WORLD!");
     }
 }
 ```
